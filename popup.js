@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
    
     var audio = new Audio('play_sound.mp3');
-
+    var _intervalTimer = 1000;
+    
     $('.startChecker').click(function(){
 
-        
         chrome.tabs.query({active: true, currentWindow: true}, tabs => {
             chrome.scripting.executeScript({target: {tabId: tabs[0].id}, files: ['content_script.js']})
         });
@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     trackNumbers(result);
                 });
             });
-        },1000);
-        
+        },_intervalTimer);
         
     });
 
