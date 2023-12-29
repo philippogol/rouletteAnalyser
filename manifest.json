@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "rouletteChecker",
+  "version": "3",
+  "description": "Analyse the latest numbers of a roulette and gives hints",
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"]
+}
